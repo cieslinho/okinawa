@@ -1,0 +1,55 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+*li {
+	list-style-type: none;
+}
+
+*a {
+	text-decoration: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+	outline: none;
+	border: none;
+	background: none;
+	font: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
+::selection {
+	background-color: $cta;
+	color: $black;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+
+body {
+	background-color: $dark-white;
+	color: $black;
+	font-size: 1.6rem;
+	font-family: 'Poppins', sans-serif;
+}
