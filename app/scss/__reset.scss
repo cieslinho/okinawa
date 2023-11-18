@@ -38,8 +38,8 @@ button {
 }
 
 ::selection {
-	background-color: $cta;
-	color: $black;
+	background-color: $red;
+	color: $white;
 }
 
 html {
@@ -48,7 +48,7 @@ html {
 }
 
 body {
-	background-color: $dark-white;
+	background-color: $white;
 	color: $black;
 	font-size: 1.6rem;
 	font-family: 'Poppins', sans-serif;

@@ -31,7 +31,8 @@ add_action( 'admin_enqueue_scripts', 'okinawa_admin_style' );
 function okinawa_config(){
   register_nav_menus(
     array(
-  'okinawa_main_menu' => 'okinawa Main Menu',
+  'okinawa_top_menu' => 'okinawa top menu',
+  'okinawa_footer_menu' => 'okinawa footer menu'
     )
   );
 }
@@ -70,7 +71,7 @@ add_theme_support('post-thumbnails', array(
   
 
     function li_menu_class($classes, $item, $args) {
-      if($args->theme_location == 'okinawa_main_menu') {
+      if($args->theme_location == 'okinawa_top_menu') {
         $classes[] = 'nav__menu-item';
       }
       return $classes;
