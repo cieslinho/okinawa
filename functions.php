@@ -74,12 +74,30 @@ add_theme_support('post-thumbnails', array(
       if($args->theme_location == 'okinawa_top_menu') {
         $classes[] = 'nav__menu-item';
       }
+      if($args->theme_location == 'okinawa_footer_menu') {
+        $classes[] = 'footer__menu-item';
+      }
       return $classes;
     }
     add_filter('nav_menu_css_class','li_menu_class',1,3);
 
-    function a_menu_class($atts) {
-      $atts['class'] = "nav__menu-link";
-      return $atts;
+
+    function add_class_on_a_tag_first($classes, $item, $args)
+{
+    if (isset($args->add_a_class)) {
+        $classes['class'] = $args->add_a_class;
     }
-    add_filter( 'nav_menu_link_attributes', 'a_menu_class');
+return $classes;
+}
+
+
+add_filter('nav_menu_link_attributes', 'add_class_on_a_tag_first', 1, 3);
+    function add_class_on_a_tag($classes, $item, $args)
+{
+    if (isset($args->add_a_class)) {
+        $classes['class'] = $args->add_a_class;
+    }
+return $classes;
+}
+
+add_filter('nav_menu_link_attributes', 'add_class_on_a_tag', 1, 3);

@@ -8,5 +8,11 @@ $rgba: rgba(
 	$alpha: 0.5,
 );
 
+$rgba-white: rgba(
+	$color: $white,
+	$alpha: 0.5,
+);
+
+$box-shadow: 0 0 8px $black;
 // transitions:
 $transition: all 0.2s;

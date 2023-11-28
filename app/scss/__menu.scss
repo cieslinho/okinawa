@@ -1,0 +1,194 @@
+.menu {
+	margin-top: 88px;
+	@include section-padding;
+
+	&__boxes {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 2em;
+	}
+
+	&__tabs {
+		display: flex;
+		gap: 0.5em;
+		width: 100%;
+		overflow-x: auto;
+
+		@include respond(mobile-sm) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		// @include respond(tablet-xl) {
+		// 	justify-content: center;
+		// }
+	}
+
+	&__tab {
+		transition: background-color 0.2s, color 0.2s, border 0.2s;
+		border: 2px solid transparent;
+		// border-radius: 25px;
+		background-color: $black;
+		padding: 0.3em 0.6em;
+		color: $white;
+		font-weight: 700;
+		font-size: 1.1rem;
+
+		@include respond(mobile-sm) {
+			font-size: 1.3rem;
+		}
+
+		@include respond(tablet) {
+			padding: 0.5em 1em;
+			font-size: 1.6rem;
+		}
+
+		&:hover {
+			border: 2px solid $black;
+			background-color: $white;
+			color: $black;
+		}
+	}
+
+	&__tab.active {
+		background-color: $red;
+
+		&:hover {
+			background-color: $white;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5em;
+	}
+
+	&__title {
+		text-align: center;
+
+		@include respond(tablet) {
+			font-size: 3.5rem;
+		}
+
+		@include respond(tablet-xl) {
+			font-size: 4rem;
+		}
+		@include respond(desktop) {
+			font-size: 5rem;
+		}
+	}
+
+	&__description {
+		text-align: center;
+
+		@include respond(tablet) {
+			font-size: 1.8rem;
+		}
+
+		@include respond(tablet-xl) {
+			font-size: 2rem;
+		}
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+		margin-top: 2em;
+
+		@include respond(tablet) {
+			display: grid;
+			grid-template-rows: 1fr;
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include respond(tablet-xl) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include respond(desktop) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+        
+		@include respond(desktop-large) {
+			grid-template-columns: repeat(5, 1fr);
+		}
+	}
+
+	&__item {
+		// border: 2px solid $white;
+		// border-radius: 25px;
+		background-color: $black;
+		// background-color: $rgba;
+
+		&-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 1em;
+			padding: 1em 2em;
+		}
+
+		&-top,
+		&-middle,
+		&-bottom {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 0.5em;
+			// background-color: $rgba-white;
+			// border-bottom: 1px solid $rgba-white;
+		}
+
+		&-img {
+			width: 150px;
+		}
+
+		&-name {
+			color: $white;
+			font-size: 2rem;
+
+			@include respond(tablet) {
+				font-size: 2.4rem;
+			}
+		}
+
+		&-description,
+		&-ingridients {
+			color: $white;
+			font-style: italic;
+			text-align: center;
+		}
+
+		&-description {
+			@include respond(tablet) {
+				font-size: 1.7rem;
+			}
+		}
+
+		&-ingridients {
+			font-size: 1.3rem;
+
+			@include respond(tablet) {
+				font-size: 1.4rem;
+			}
+		}
+
+		&-price {
+			color: $white;
+			font-weight: 700;
+			font-size: 2rem;
+
+			@include respond(tablet) {
+				font-size: 2.4rem;
+			}
+		}
+	}
+}

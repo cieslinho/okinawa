@@ -1,0 +1,37 @@
+.mission {
+	@include section-padding;
+
+	&__boxes {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+
+		@include respond(tablet) {
+			flex-direction: row;
+		}
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+
+		@include respond(tablet) {
+			width: 50%;
+		}
+	}
+
+	&__texts {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+	}
+
+	&__text {
+		line-height: 180%;
+
+		@include respond(tablet-xl) {
+			font-size: 1.8rem;
+		}
+	}
+}

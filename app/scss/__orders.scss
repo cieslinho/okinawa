@@ -1,0 +1,114 @@
+.orders {
+	@include section-padding;
+
+	&__box {
+		// display: flex;
+		position: relative;
+		border: 2px solid $black;
+		border-radius: 25px;
+		// width: 100%;
+		padding: 2em 1em;
+		overflow: hidden;
+
+		@include respond(tablet) {
+			padding: 3em 2em;
+		}
+
+		&-img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -5;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -4;
+			// backdrop-filter: blur(5px);
+			background-color: $rgba;
+			width: 100%;
+			height: 100%;
+			content: '';
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		z-index: 20;
+	}
+
+	&__texts {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+	}
+
+	&__btns {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+
+		@include respond(tablet) {
+			flex-direction: row;
+		}
+	}
+
+	&__title {
+		color: $white;
+
+		@include respond(tablet) {
+			font-size: 2.6rem;
+		}
+
+		@include respond(tablet-xl) {
+			font-size: 4rem;
+		}
+	}
+
+	&__text {
+		color: $white;
+
+		@include respond(tablet) {
+			font-size: 1.8rem;
+		}
+
+		@include respond(tablet-xl) {
+			font-size: 2.2rem;
+		}
+	}
+
+	&__btn {
+		z-index: 20;
+		transition: 0.3s all;
+		border: 2px solid transparent;
+		background-color: $black;
+		padding: 0.4em 0.8em;
+		color: $white;
+		font-weight: 700;
+		font-size: 1.4rem;
+		text-align: center;
+		text-transform: uppercase;
+
+		@include respond(tablet) {
+			padding: 0.5em 1em;
+			font-size: 1.6rem;
+		}
+
+		@include respond(tablet-xl) {
+			font-size: 2rem;
+		}
+
+		&:hover {
+			border: 2px solid $black;
+			background-color: $white;
+			color: $black;
+		}
+	}
+}

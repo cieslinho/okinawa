@@ -1,0 +1,131 @@
+.footer {
+	background-color: $black;
+
+	&__boxes {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+
+		@include respond(tablet-xl) {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			align-items: flex-start;
+		}
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1em;
+		padding: 0.5em;
+
+		@include respond(tablet-xl) {
+			align-items: center;
+		}
+
+		&-title {
+			border-bottom: 2px solid $red;
+			color: $white;
+			font-weight: 700;
+			// font-size: 2rem;
+
+			text-transform: uppercase;
+
+			@include respond(tablet-xl) {
+				font-size: 1.8rem;
+				text-align: center;
+			}
+		}
+
+		&-text {
+			display: block;
+			padding: 0.3em;
+			color: $white;
+			font-size: 1.4rem;
+
+			@include respond(tablet-xl) {
+				font-size: 1.6rem;
+				text-align: center;
+			}
+		}
+
+		&-link {
+			display: block;
+			transition: $transition;
+			border-bottom: 1px solid transparent;
+			padding: 0.3em;
+			color: $white;
+			font-size: 1.4rem;
+
+			@include respond(tablet-xl) {
+				font-size: 1.6rem;
+			}
+
+			&:hover {
+				border-bottom: 1px solid $rgba-white;
+				color: $rgba-white;
+			}
+		}
+
+		&-texts {
+			display: flex;
+			flex-direction: column;
+			gap: 0.3em;
+
+			@include respond(tablet-xl) {
+				align-items: center;
+				text-align: center;
+			}
+		}
+	}
+
+	&__menu {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.3em;
+
+		&-item {
+			width: 100%;
+		}
+
+		&-link {
+			display: block;
+			transition: $transition;
+			border-bottom: 1px solid transparent;
+			padding: 0.3em;
+			color: $white;
+			font-size: 1.4rem;
+
+			@include respond(tablet-xl) {
+				font-size: 1.6rem;
+			}
+
+			&:hover {
+				border-bottom: 1px solid $rgba-white;
+				color: $rgba-white;
+			}
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 0.1em;
+		margin-top: 2em;
+		text-align: center;
+
+		&-text {
+			color: $white;
+			font-size: 1.2rem;
+		}
+
+		&-link {
+			color: $white;
+			font-weight: 700;
+		}
+	}
+}

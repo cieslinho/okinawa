@@ -1,0 +1,72 @@
+.about {
+	@include section-padding;
+	margin-top: 88px;
+
+	&__box {
+		position: relative;
+
+		border: 2px solid $black;
+		border-radius: 25px;
+		padding: 2em 1em;
+		min-height: 250px;
+
+		overflow: hidden;
+
+		@include respond(tablet) {
+			padding: 3em 2em;
+			width: 100%;
+			min-height: 250px;
+		}
+
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -4;
+			background-color: $rgba;
+			width: 100%;
+			height: 100%;
+			content: '';
+		}
+	}
+
+	&__img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -20;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__texts {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+	}
+
+	&__title {
+		color: $white;
+
+		@include respond(tablet) {
+			font-size: 2.6rem;
+		}
+
+		@include respond(tablet-xl) {
+			font-size: 4rem;
+		}
+	}
+
+	&__text {
+		color: $white;
+
+		@include respond(tablet) {
+			font-size: 1.8rem;
+		}
+
+		@include respond(tablet-xl) {
+			font-size: 2.2rem;
+		}
+	}
+}

@@ -55,7 +55,8 @@
                                 'menu_class' => 'nav__menu',
                                 'container' => 'false',
                                 'menu_id' =>  'menu',
-                                'add_li_class'  => 'nav__menu-item'
+                                'add_li_class'  => 'nav__menu-item',
+                                'add_a_class' => 'nav__menu-link'
                             )
                         );
                     ?>
