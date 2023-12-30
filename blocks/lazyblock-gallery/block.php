@@ -6,39 +6,14 @@
         </div>
         <div class="gallery__swiper swiper">
             <div class="gallery__swiper-wrapper swiper-wrapper">
+            <?php foreach( $attributes['slide'] as $slide ): ?>
 
                 <div class="gallery__slide swiper-slide">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-galeria-1.jpg"
-                        alt="" class="gallery__slide-img">
+                    <img src="<?php echo esc_url( $slide['img']['url'] ); ?>" alt="<?php echo esc_attr( $slide['img']['alt'] ); ?>" class="gallery__slide-img">
                 </div>
-                <div class="gallery__slide swiper-slide">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-galeria-2.jpg"
-                        alt="" class="gallery__slide-img">
-                </div>
-                <div class="gallery__slide swiper-slide">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-galeria-3.jpg"
-                        alt="" class="gallery__slide-img">
-                </div>
-                <div class="gallery__slide swiper-slide">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-galeria-4.jpg"
-                        alt="" class="gallery__slide-img">
-                </div>
-                <div class="gallery__slide swiper-slide">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-galeria-5.jpg"
-                        alt="" class="gallery__slide-img">
-                </div>
-                <div class="gallery__slide swiper-slide">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-galeria-6.jpg"
-                        alt="" class="gallery__slide-img">
-                </div>
-                <div class="gallery__slide swiper-slide">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-galeria-7.jpg"
-                        alt="" class="gallery__slide-img">
-                </div>
-                <div class="gallery__slide swiper-slide">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-galeria-8.jpg"
-                        alt="" class="gallery__slide-img">
-                </div>
+              
+
+                <?php endforeach; ?>
 
 
 

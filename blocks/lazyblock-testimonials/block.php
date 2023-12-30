@@ -8,66 +8,22 @@
         </div>
         <div class="swiper testimonials__swiper">
             <div class="swiper-wrapper testimonials__swiper-wrapper">
+            <?php foreach( $attributes['slide'] as $slide ): ?>
+
                 <div class="testimonials__box  swiper-slide">
                     <div class="testimonials__content">
                         <i class='bx bxs-quote-right testimonials__icon'></i>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-testimonials-1.jpg"
-                            alt="" class="testimonials__img">
+                        <img src="<?php echo esc_url( $slide['avatar']['url'] ); ?>" alt="<?php echo esc_attr( $slide['avatar']['alt'] ); ?>" class="testimonials__img">
                         <div class="testimonials__texts">
-                            <p class="testimonials__text">Polecam, miejsce tworzone z pasją! Ciekawa susharnia, może
-                                zaskoczyć największego smakosza;) Rolki zapiekane z czapeczką w piecu absolutne
-                                odkrycie;)</p>
-                            <p class="testimonials__text">Dobre jedzenie<br>Duże menu<br>Takeaway menu<br>Creative
-                                cuisine</p>
+                            <p class="testimonials__text"><?php echo $slide['text']; ?></p>
+                      
                         </div>
-                        <p class="testimonials__author">Dagmara Przybylska</p>
+                        <p class="testimonials__author"><?php echo $slide['author']; ?></p>
                     </div>
                 </div>
-                <div class="testimonials__box  swiper-slide">
-                    <div class="testimonials__content">
-                        <i class='bx bxs-quote-right testimonials__icon'></i>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-testimonials-1.jpg"
-                            alt="" class="testimonials__img">
-                        <div class="testimonials__texts">
-                            <p class="testimonials__text">Polecam, miejsce tworzone z pasją! Ciekawa susharnia, może
-                                zaskoczyć największego smakosza;) Rolki zapiekane z czapeczką w piecu absolutne
-                                odkrycie;)</p>
-                            <p class="testimonials__text">Dobre jedzenie<br>Duże menu<br>Takeaway menu<br>Creative
-                                cuisine</p>
-                        </div>
-                        <p class="testimonials__author">Dagmara Przybylska</p>
-                    </div>
-                </div>
-                <div class="testimonials__box  swiper-slide">
-                    <div class="testimonials__content">
-                        <i class='bx bxs-quote-right testimonials__icon'></i>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-testimonials-1.jpg"
-                            alt="" class="testimonials__img">
-                        <div class="testimonials__texts">
-                            <p class="testimonials__text">Polecam, miejsce tworzone z pasją! Ciekawa susharnia, może
-                                zaskoczyć największego smakosza;) Rolki zapiekane z czapeczką w piecu absolutne
-                                odkrycie;)</p>
-                            <p class="testimonials__text">Dobre jedzenie<br>Duże menu<br>Takeaway menu<br>Creative
-                                cuisine</p>
-                        </div>
-                        <p class="testimonials__author">Dagmara Przybylska</p>
-                    </div>
-                </div>
-                <div class="testimonials__box  swiper-slide">
-                    <div class="testimonials__content">
-                        <i class='bx bxs-quote-right testimonials__icon'></i>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-testimonials-1.jpg"
-                            alt="" class="testimonials__img">
-                        <div class="testimonials__texts">
-                            <p class="testimonials__text">Polecam, miejsce tworzone z pasją! Ciekawa susharnia, może
-                                zaskoczyć największego smakosza;) Rolki zapiekane z czapeczką w piecu absolutne
-                                odkrycie;)</p>
-                            <p class="testimonials__text">Dobre jedzenie<br>Duże menu<br>Takeaway menu<br>Creative
-                                cuisine</p>
-                        </div>
-                        <p class="testimonials__author">Dagmara Przybylska</p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
+
+
             </div>
             <div class="testimonials__pagination swiper-pagination"></div>
         </div>

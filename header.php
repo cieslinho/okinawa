@@ -24,7 +24,7 @@
     <?php wp_head(); ?>
 
 <body <?php body_class();?>>
-
+<main class="main">
     <nav class="nav">
         <div class="nav__overlay "></div>
         <div class="container">

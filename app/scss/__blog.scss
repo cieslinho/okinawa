@@ -1,0 +1,163 @@
+.blog {
+	margin-top: 80px;
+	@include section-padding;
+
+	&__posts {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+
+		@include respond(tablet-xl) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+	&__post {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		border: 2px solid $black;
+		border-radius: 25px;
+		// width: 100%;
+		padding: 1em;
+		min-height: 300px;
+		overflow: hidden;
+
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 10;
+			border-radius: 25px;
+			background-color: $rgba;
+			width: 100%;
+			height: 100%;
+			content: '';
+		}
+
+		@include respond(tablet-xl) {
+			flex: 0 0 31%;
+		}
+
+		&:first-child {
+			flex: 0 0 96%;
+
+			@include respond(tablet-xl) {
+				.blog__post-date {
+					padding: 0.6em 1.2em;
+					font-size: 1.5rem;
+				}
+
+				.blog__post-title {
+					font-size: 3rem;
+				}
+
+				.blog__post-description {
+					font-size: 2rem;
+				}
+			}
+		}
+
+		&-img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		&-content {
+			display: flex;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			flex-direction: column;
+			justify-content: flex-end;
+			z-index: 20;
+			background-color: $rgba;
+			padding: 1em;
+			width: 100%;
+			color: $white;
+		}
+
+		&-date {
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			z-index: 20;
+			border-radius: 25px;
+			background-color: $red;
+			padding: 0.4em 0.8em;
+			color: $white;
+			font-weight: 700;
+			font-size: 1.3rem;
+		}
+
+		&-title {
+			font-size: 1.8rem;
+
+			@include respond(tablet) {
+				font-size: 2rem;
+			}
+		}
+
+		&-description {
+			font-size: 1.4rem;
+
+			@include respond(tablet) {
+				font-size: 1.8rem;
+			}
+		}
+
+		&-tags {
+			font-size: 1.3rem;
+
+			@include respond(tablet) {
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	&__btns {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5em;
+		margin-bottom: 2em;
+	}
+
+	&__btn {
+		transition: background-color 0.2s, color 0.2s, border 0.2s;
+		border: 2px solid transparent;
+		// border-radius: 25px;
+		background-color: $black;
+		padding: 0.3em 0.6em;
+		color: $white;
+		font-weight: 700;
+		font-size: 1.1rem;
+
+		@include respond(mobile-sm) {
+			font-size: 1.3rem;
+		}
+
+		@include respond(tablet) {
+			padding: 0.5em 1em;
+			font-size: 1.6rem;
+		}
+
+		&:hover {
+			border: 2px solid $black;
+			background-color: $white;
+			color: $black;
+		}
+	}
+}

@@ -9,228 +9,27 @@
 
         <div class="suggested__boxes suggested__swiper swiper">
             <div class="suggested__swiper-wrapper swiper-wrapper">
-
+            <?php foreach( $attributes['sushi-slide'] as $slide ): ?>
 
                 <div class="suggested__sushi swiper-slide">
                     <div class="suggested__sushi-top">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-rolka.png"
-                            alt="" class="suggested__sushi-img">
+                        <img src="<?php echo esc_url( $slide['img']['url'] ); ?>" alt="<?php echo esc_attr( $slide['img']['alt'] ); ?>" class="suggested__sushi-img">
                     </div>
                     <div class="suggested__sushi-middle">
-                        <p class="suggested__sushi-name">Hosomak z łososiem grillowanym</p>
-                        <p class="suggested__sushi-ingridients">Łosoś grillowany w sosie teriyaki, ryż, nori
-                            (hosomak salmon agemono)</p>
+                        <p class="suggested__sushi-name">    <?php echo $slide['title']; ?></p>
+                        <p class="suggested__sushi-ingridients">    <?php echo $slide['ingridients']; ?></p>
                     </div>
                     <div class="suggested__sushi-bottom">
                         <p class="suggested__sushi-price">
-                            19 zł
-                        </p>
+                        <?php echo $slide['price']; ?>                </p>
                         <div class="suggested__sushi-btns">
-                            <a href="tel:+48537895760" class="suggested__sushi-btn">telefon</a>
-                            <a href="https://www.pyszne.pl/menu/okinawa-sushi-bar-japan-restaurant#kategoria_OPP3O3R01"
-                                class="suggested__sushi-btn">pyszne.pl</a>
+                            <a href="    <?php echo $slide['mobile']; ?>" class="suggested__sushi-btn">telefon</a>
+                            <a href="    <?php echo $slide['link']; ?>"                                class="suggested__sushi-btn">pyszne.pl</a>
                         </div>
 
                     </div>
                 </div>
-                <div class="suggested__sushi swiper-slide">
-                    <div class="suggested__sushi-top">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-rolka.png"
-                            alt="" class="suggested__sushi-img">
-                    </div>
-                    <div class="suggested__sushi-middle">
-                        <p class="suggested__sushi-name">Hosomak z łososiem grillowanym</p>
-                        <p class="suggested__sushi-ingridients">Łosoś grillowany w sosie teriyaki, ryż, nori
-                            (hosomak salmon agemono)</p>
-                    </div>
-                    <div class="suggested__sushi-bottom">
-                        <p class="suggested__sushi-price">
-                            19 zł
-                        </p>
-                        <div class="suggested__sushi-btns">
-                            <a href="tel:+48537895760" class="suggested__sushi-btn">telefon</a>
-                            <a href="https://www.pyszne.pl/menu/okinawa-sushi-bar-japan-restaurant#kategoria_OPP3O3R01"
-                                class="suggested__sushi-btn">pyszne.pl</a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="suggested__sushi active swiper-slide">
-                    <div class="suggested__sushi-top">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-rolka.png"
-                            alt="" class="suggested__sushi-img">
-                    </div>
-                    <div class="suggested__sushi-middle">
-                        <p class="suggested__sushi-name">Hosomak z łososiem grillowanym</p>
-                        <p class="suggested__sushi-ingridients">Łosoś grillowany w sosie teriyaki, ryż, nori
-                            (hosomak salmon agemono)</p>
-                    </div>
-                    <div class="suggested__sushi-bottom">
-                        <p class="suggested__sushi-price">
-                            19 zł
-                        </p>
-                        <div class="suggested__sushi-btns">
-                            <a href="tel:+48537895760" class="suggested__sushi-btn">telefon</a>
-                            <a href="https://www.pyszne.pl/menu/okinawa-sushi-bar-japan-restaurant#kategoria_OPP3O3R01"
-                                class="suggested__sushi-btn">pyszne.pl</a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="suggested__sushi swiper-slide">
-                    <div class="suggested__sushi-top">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-rolka.png"
-                            alt="" class="suggested__sushi-img">
-                    </div>
-                    <div class="suggested__sushi-middle">
-                        <p class="suggested__sushi-name">Hosomak z łososiem grillowanym</p>
-                        <p class="suggested__sushi-ingridients">Łosoś grillowany w sosie teriyaki, ryż, nori
-                            (hosomak salmon agemono)</p>
-                    </div>
-                    <div class="suggested__sushi-bottom">
-                        <p class="suggested__sushi-price">
-                            19 zł
-                        </p>
-                        <div class="suggested__sushi-btns">
-                            <a href="tel:+48537895760" class="suggested__sushi-btn">telefon</a>
-                            <a href="https://www.pyszne.pl/menu/okinawa-sushi-bar-japan-restaurant#kategoria_OPP3O3R01"
-                                class="suggested__sushi-btn">pyszne.pl</a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="suggested__sushi swiper-slide">
-                    <div class="suggested__sushi-top">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-rolka.png"
-                            alt="" class="suggested__sushi-img">
-                    </div>
-                    <div class="suggested__sushi-middle">
-                        <p class="suggested__sushi-name">Hosomak z łososiem grillowanym</p>
-                        <p class="suggested__sushi-ingridients">Łosoś grillowany w sosie teriyaki, ryż, nori
-                            (hosomak salmon agemono)</p>
-                    </div>
-                    <div class="suggested__sushi-bottom">
-                        <p class="suggested__sushi-price">
-                            19 zł
-                        </p>
-                        <div class="suggested__sushi-btns">
-                            <a href="tel:+48537895760" class="suggested__sushi-btn">telefon</a>
-                            <a href="https://www.pyszne.pl/menu/okinawa-sushi-bar-japan-restaurant#kategoria_OPP3O3R01"
-                                class="suggested__sushi-btn">pyszne.pl</a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="suggested__sushi swiper-slide">
-                    <div class="suggested__sushi-top">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-rolka.png"
-                            alt="" class="suggested__sushi-img">
-                    </div>
-                    <div class="suggested__sushi-middle">
-                        <p class="suggested__sushi-name">Hosomak z łososiem grillowanym</p>
-                        <p class="suggested__sushi-ingridients">Łosoś grillowany w sosie teriyaki, ryż, nori
-                            (hosomak salmon agemono)</p>
-                    </div>
-                    <div class="suggested__sushi-bottom">
-                        <p class="suggested__sushi-price">
-                            19 zł
-                        </p>
-                        <div class="suggested__sushi-btns">
-                            <a href="tel:+48537895760" class="suggested__sushi-btn">telefon</a>
-                            <a href="https://www.pyszne.pl/menu/okinawa-sushi-bar-japan-restaurant#kategoria_OPP3O3R01"
-                                class="suggested__sushi-btn">pyszne.pl</a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="suggested__sushi swiper-slide">
-                    <div class="suggested__sushi-top">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-rolka.png"
-                            alt="" class="suggested__sushi-img">
-                    </div>
-                    <div class="suggested__sushi-middle">
-                        <p class="suggested__sushi-name">Hosomak z łososiem grillowanym</p>
-                        <p class="suggested__sushi-ingridients">Łosoś grillowany w sosie teriyaki, ryż, nori
-                            (hosomak salmon agemono)</p>
-                    </div>
-                    <div class="suggested__sushi-bottom">
-                        <p class="suggested__sushi-price">
-                            19 zł
-                        </p>
-                        <div class="suggested__sushi-btns">
-                            <a href="tel:+48537895760" class="suggested__sushi-btn">telefon</a>
-                            <a href="https://www.pyszne.pl/menu/okinawa-sushi-bar-japan-restaurant#kategoria_OPP3O3R01"
-                                class="suggested__sushi-btn">pyszne.pl</a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="suggested__sushi active swiper-slide">
-                    <div class="suggested__sushi-top">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-rolka.png"
-                            alt="" class="suggested__sushi-img">
-                    </div>
-                    <div class="suggested__sushi-middle">
-                        <p class="suggested__sushi-name">Hosomak z łososiem grillowanym</p>
-                        <p class="suggested__sushi-ingridients">Łosoś grillowany w sosie teriyaki, ryż, nori
-                            (hosomak salmon agemono)</p>
-                    </div>
-                    <div class="suggested__sushi-bottom">
-                        <p class="suggested__sushi-price">
-                            19 zł
-                        </p>
-                        <div class="suggested__sushi-btns">
-                            <a href="tel:+48537895760" class="suggested__sushi-btn">telefon</a>
-                            <a href="https://www.pyszne.pl/menu/okinawa-sushi-bar-japan-restaurant#kategoria_OPP3O3R01"
-                                class="suggested__sushi-btn">pyszne.pl</a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="suggested__sushi swiper-slide">
-                    <div class="suggested__sushi-top">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-rolka.png"
-                            alt="" class="suggested__sushi-img">
-                    </div>
-                    <div class="suggested__sushi-middle">
-                        <p class="suggested__sushi-name">Hosomak z łososiem grillowanym</p>
-                        <p class="suggested__sushi-ingridients">Łosoś grillowany w sosie teriyaki, ryż, nori
-                            (hosomak salmon agemono)</p>
-                    </div>
-                    <div class="suggested__sushi-bottom">
-                        <p class="suggested__sushi-price">
-                            19 zł
-                        </p>
-                        <div class="suggested__sushi-btns">
-                            <a href="tel:+48537895760" class="suggested__sushi-btn">telefon</a>
-                            <a href="https://www.pyszne.pl/menu/okinawa-sushi-bar-japan-restaurant#kategoria_OPP3O3R01"
-                                class="suggested__sushi-btn">pyszne.pl</a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="suggested__sushi swiper-slide">
-                    <div class="suggested__sushi-top">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-rolka.png"
-                            alt="" class="suggested__sushi-img">
-                    </div>
-                    <div class="suggested__sushi-middle">
-                        <p class="suggested__sushi-name">Hosomak z łososiem grillowanym</p>
-                        <p class="suggested__sushi-ingridients">Łosoś grillowany w sosie teriyaki, ryż, nori
-                            (hosomak salmon agemono)</p>
-                    </div>
-                    <div class="suggested__sushi-bottom">
-                        <p class="suggested__sushi-price">
-                            19 zł
-                        </p>
-                        <div class="suggested__sushi-btns">
-                            <a href="tel:+48537895760" class="suggested__sushi-btn">telefon</a>
-                            <a href="https://www.pyszne.pl/menu/okinawa-sushi-bar-japan-restaurant#kategoria_OPP3O3R01"
-                                class="suggested__sushi-btn">pyszne.pl</a>
-                        </div>
-
-                    </div>
-                </div>
+                <?php endforeach; ?>
 
 
             </div>

@@ -1,0 +1,182 @@
+.contact {
+	margin-top: 80px;
+	@include section-padding;
+
+	&__box {
+		position: relative;
+
+		border: 2px solid $black;
+		border-radius: 25px;
+		padding: 2em 1em;
+		min-height: 250px;
+
+		overflow: hidden;
+
+		@include respond(tablet) {
+			padding: 3em 2em;
+			width: 100%;
+			min-height: 250px;
+		}
+
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -4;
+			background-color: $rgba;
+			width: 100%;
+			height: 100%;
+			content: '';
+		}
+	}
+
+	&__img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -20;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__texts {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+	}
+
+	&__title {
+		color: $white;
+
+		@include respond(tablet) {
+			font-size: 2.6rem;
+		}
+
+		@include respond(tablet-xl) {
+			font-size: 4rem;
+		}
+	}
+
+	&__text {
+		color: $white;
+
+		@include respond(tablet) {
+			font-size: 1.8rem;
+		}
+
+		@include respond(tablet-xl) {
+			font-size: 2.2rem;
+		}
+	}
+
+	&__form {
+		margin-top: 3em;
+		border: 2px solid $black;
+		border-radius: 25px;
+		// padding: 2em 1em;
+
+		@include respond(tablet) {
+			// padding: 3em 2em;
+		}
+
+		&-content {
+			display: flex;
+			flex-direction: column;
+			gap: 2em;
+			padding: 2em 1em 0em 1em;
+
+			@include respond(tablet) {
+				padding: 3em 2em 1em 2em;
+			}
+		}
+
+		&-fields {
+			display: flex;
+			flex-direction: column;
+			gap: 2em;
+			width: 100% !important;
+
+			@include respond(tablet) {
+				flex-direction: row;
+				justify-content: space-between;
+			}
+
+			&:last-child {
+				flex-direction: column;
+				gap: 1em;
+			}
+		}
+
+		.wpcf7-form-control-wrap {
+			width: 100%;
+		}
+
+		.wpcf7-not-valid-tip {
+			// margin-top: 0.5em;
+			padding: 0.5em 1em;
+			color: $red !important;
+			font-weight: 700;
+		}
+
+		.wpcf7-response-output {
+			margin: 0 2em 3em 2em !important;
+			border: 2px solid $red !important;
+			padding: 0.5em 1em !important;
+			color: $red !important;
+			font-weight: 700;
+		}
+
+		.wpcf7-spinner {
+			align-self: center;
+		}
+
+		&-label,
+		&-textarea {
+			transition: border 0.2s;
+			border-bottom: 2px solid $black;
+			padding: 0.5em 1em;
+			width: 100% !important;
+			color: $black;
+			font-weight: 700;
+
+			&::placeholder {
+				color: $black;
+				font-weight: 700;
+			}
+
+			&:hover,
+			&:focus {
+				border-bottom: 2px solid $red;
+			}
+
+			@include respond(tablet) {
+				font-size: 1.8rem;
+			}
+		}
+
+		&-btn {
+			transition: background-color 0.2s;
+			cursor: pointer;
+			// width: 100%;
+			background-color: $red;
+			padding: 1em 2em;
+			color: $white;
+			font-weight: 700;
+			text-transform: uppercase;
+
+			&:hover {
+				background-color: $black;
+			}
+
+			@include respond(tablet) {
+				padding: 1em 2em;
+				width: 100%;
+			}
+
+			@include respond(tablet) {
+				font-size: 1.8rem;
+			}
+		}
+	}
+}

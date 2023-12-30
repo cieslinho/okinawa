@@ -101,3 +101,6 @@ return $classes;
 }
 
 add_filter('nav_menu_link_attributes', 'add_class_on_a_tag', 1, 3);
+
+// add_filter( ‘wpcf7_autop_or_not’, ‘__return_false’ );
+

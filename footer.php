@@ -1,8 +1,9 @@
 <?php
 /**
- * @package Ciesla Szymon
+ * @package Okinawa
  */
 ?>
+                    </main>
 <footer class="footer">
     <div class="container">
         <div class="footer__boxes">
@@ -70,6 +71,7 @@
         </div>
     </div>
 </footer>
+
 <?php wp_footer(); ?>
 
 
