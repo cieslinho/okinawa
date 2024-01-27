@@ -1,54 +1,60 @@
 <section class="workshop">
     <div class="container">
         <div class="workshop__banner">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-galeria-7.jpg"
-                alt="" class="workshop__img">
+            <?php if ( isset( $attributes['img']['url'] ) ) : ?>
+            <img src="<?php echo esc_url( $attributes['img']['url'] ); ?>"
+                alt="<?php echo esc_attr( $attributes['img']['alt'] ); ?>" class="workshop__img">
+            <?php endif; ?>
+
             <div class="workshop__content">
                 <div class="workshop__texts">
-                    <h3 class="workshop__title">Szkolenia w Okinawa Sushi Bar & Restaurant!</h3>
-                    <p class="workshop__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, iusto?
+                    <h3 class="workshop__title">
+                        <?php echo $attributes['title']; ?>
+                    </h3>
+                    <?php foreach( $attributes['texts'] as $texts ): ?>
+                    <p class="workshop__text">
+                        <?php echo $texts['text']; ?>
                     </p>
-                    <p class="workshop__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, iusto?
-                    </p>
-                    <p class="workshop__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, iusto?
-                    </p>
+                    <?php endforeach; ?>
+
                 </div>
             </div>
         </div>
         <div class="workshop__boxes">
+            <?php foreach( $attributes['workshop'] as $workshop ): ?>
             <div class="workshop__box">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-galeria-7.jpg"
-                    alt="" class="workshop__hero">
+                <img src="<?php echo esc_url( $workshop['img']['url'] ); ?>"
+                    alt="<?php echo esc_attr( $workshop['img']['alt'] ); ?>" class="workshop__hero">
                 <div class="workshop__infos">
                     <div class="workshop__titles">
-                        <h4 class="workshop__name">Nazwa szkolenia: <span class="workshop__span">Sushi Master
-                                1.0</span>
+                        <h4 class="workshop__name">Nazwa szkolenia: <span class="workshop__span">
+                                <?php echo $workshop['workshop-title']; ?>
+                            </span>
                         </h4>
                     </div>
                     <div class="workshop__event">
 
-                        <h4 class="workshop__speaker">Prowadzący: <span class="workshop__span">Leszek Kryniewski</span>
-                        </h4>
-                        <img src="https://mmcpolska.pl/upload/2017-07-26/pqgrla_file2122d9911830622d3fbc8bb1ee0c17dd.jpg.jpg"
-                            alt="avatar" class="workshop__avatar">
+                        <h4 class="workshop__speaker">Prowadzący: <span class="workshop__span">
+                                <?php echo $workshop['workshop-author']; ?>
+                            </span></h4>
+                        <img src="<?php echo esc_url( $workshop['avatar']['url'] ); ?>" alt="<?php echo esc_attr( $workshop['avatar']['alt'] ); ?>" class="workshop__avatar">
                     </div>
 
                     <div class="workshop__descriptions">
-                        <p class="workshop__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Accusantium id veniam, consequuntur quas placeat inventore unde. Repellendus, sapiente
-                            aspernatur ut eos fugiat non facilis natus doloremque cum maxime explicabo est recusandae
-                            ipsum
-                            veritatis dolorum sunt, eum laborum hic repudiandae ab quisquam, earum consectetur. Odio
-                            consequatur aspernatur beatae dignissimos doloremque id?</p>
+                        <p class="workshop__description">
+                            <?php echo $workshop['description']; ?>
+                        </p>
                     </div>
                 </div>
 
-                <div class="workshop__btns">
-                    <a href="#" class="workshop__btn">zapytaj o szczegóły</a>
-                    <a href="#" class="workshop__btn">zadzwoń</a>
-                </div>
 
+                <div class="workshop__btns">
+                    <a href="mailto:kontakt@okinawa.pl" class="workshop__btn">zapytaj o szczegóły</a>
+                    <a href="tel:+48516997590" class="workshop__btn">zadzwoń</a>
+                </div>
+                
             </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>

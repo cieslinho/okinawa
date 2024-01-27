@@ -1,4 +1,4 @@
-<section class="gallery">
+<section id="gallery" class="gallery">
     <div class="container">
         <div class="section-texts">
             <h2 class="section-title">galeria</h2>

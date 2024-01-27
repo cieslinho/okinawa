@@ -139,7 +139,7 @@
 
 		&-logo {
 			position: absolute;
-			top: 130px;
+			top: 80px;
 			z-index: 50;
 
 			@include respond(tablet-xl) {
@@ -184,7 +184,7 @@
 			transform: translate(-50%, -50%);
 			opacity: 0.3;
 			z-index: -20;
-			background: url('../images/wave-png.png') $white;
+			background: url('../images/wave-png.webp') $white;
 			background-position: center;
 			background-size: 95%;
 			background-repeat: no-repeat;
@@ -250,7 +250,7 @@
 	&__bottom {
 		display: flex;
 		position: absolute;
-		bottom: 100px;
+		bottom: 60px;
 		left: 50%;
 		flex-direction: column;
 		gap: 1.5em;

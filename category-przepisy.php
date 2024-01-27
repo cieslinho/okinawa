@@ -26,6 +26,7 @@ $arr_posts = new WP_Query( $args );
     <div class="container">
     <div class="blog__btns">
     <a href="/kategoria/wszystko" class="blog__btn">Wszystko</a>
+    <a href="/kategoria/wiedza" class="blog__btn">Wiedza</a>
     <a href="/kategoria/przepisy" class="blog__btn">Przepisy</a>
     <a href="/kategoria/szkolenia" class="blog__btn">Szkolenia</a>
 </div>

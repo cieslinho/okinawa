@@ -46,6 +46,7 @@ button {
 
 html {
 	scroll-behavior: smooth;
+	scroll-padding-top: 50px;
 	font-size: 62.5%;
 }
 
@@ -55,7 +56,7 @@ html {
 }
 
 body {
-	background-color: $white;
+	background: url('../images/waves-9.jpg');
 	color: $black;
 	font-size: 1.6rem;
 	font-family: 'Poppins', sans-serif;

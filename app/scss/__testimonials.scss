@@ -16,6 +16,8 @@
 	}
 
 	&__swiper {
+		// overflow: visible;
+		padding-top: 1.5em;
 		&-wrapper {
 			padding-bottom: 2em;
 		}
@@ -23,6 +25,19 @@
 
 	&__box {
 		position: relative;
+
+		&::before {
+			position: absolute;
+			top: -30px;
+			left: -3px;
+			z-index: 30;
+			backdrop-filter: blur(5px);
+			background-color: $rgba-white;
+			width: 55px;
+			height: 55px;
+			overflow: hidden;
+			content: '';
+		}
 
 		&::after {
 			position: absolute;
@@ -43,22 +58,24 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 1em;
-		// z-index: 30;
+
 		border: 2px solid $black;
 		border-radius: 25px;
 		padding: 1em;
-		// overflow: hidden;
+
 		text-align: center;
 	}
 
 	&__icon {
 		position: absolute;
-		top: -25px;
-		left: 0;
+		top: -30px;
+		left: -3px;
 		align-self: flex-start;
-		z-index: 10;
-		background-color: $white;
+		z-index: 40;
+		// background-color: $rgba-white;
 		padding: 0.3em;
+		overflow: hidden;
+		color: $black;
 		font-size: 3.5rem;
 	}
 
@@ -94,6 +111,28 @@
 
 		@include respond(tablet) {
 			font-size: 2rem;
+		}
+	}
+
+	&__total {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5em;
+
+		&-current,
+		&-all {
+			padding: 0.2em 0.4em;
+			font-weight: 700;
+			font-size: 2rem;
+		}
+
+		&-current {
+		}
+
+		&-span {
+			color: $red;
+			font-size: 2.5rem;
 		}
 	}
 

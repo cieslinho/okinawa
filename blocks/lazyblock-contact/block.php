@@ -1,11 +1,17 @@
 <section class="contact">
     <div class="container">
         <div class="contact__box">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-galeria-7.jpg" alt="" class="contact__img">
+        <?php if ( isset( $attributes['img']['url'] ) ) : ?>
+            <img src="<?php echo esc_url( $attributes['img']['url'] ); ?>" alt="<?php echo esc_attr( $attributes['img']['alt'] ); ?>" class="contact__img">
+        <?php endif; ?>
             <div class="contact__content">
                 <div class="contact__texts">
-                    <h3 class="contact__title">Poznaj Okinawa sushi</h3>
-                    <p class="contact__text">Ciepłe i zimne dania kuchni japońskiej, sushi, ramen, zupy, dostawa, spotkania prywatne i biznesowe, warsztaty kulinarne, dania ekspresowe.</p>
+                    <h3 class="contact__title"><?php echo $attributes['title']; ?></h3>
+                 
+                    <?php foreach( $attributes['texts'] as $texts ): ?>
+                    <p class="contact__text"><?php echo $texts['text']; ?></p>
+                 
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

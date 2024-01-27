@@ -1,20 +1,25 @@
 <header class="header section-decoration">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/castle-png.png" alt="" class="section-img section-img-left">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sushi-okinawa-opole-desktop.png" alt="" class="section-img section-img-right">
+<?php if ( isset( $attributes['left-decoration']['url'] ) ) : ?>
+    <img src="<?php echo esc_url( $attributes['left-decoration']['url'] ); ?>" alt="<?php echo esc_attr( $attributes['left-decoration']['alt'] ); ?>" class="section-img section-img-left">
+    <?php endif; ?>
+    <?php if ( isset( $attributes['right-decoration']['url'] ) ) : ?>
+    <img src="<?php echo esc_url( $attributes['right-decoration']['url'] ); ?>" alt="<?php echo esc_attr( $attributes['right-decoration']['alt'] ); ?> "class="section-img section-img-right">
+    <?php endif; ?>
     <div class="container">
         <div class="header__box">
             <div class="header__left">
                 <div class="header__info">
                     <div class="header__texts">
                         <div class="header__titles">
-                            <h1 class="header__title">Okinawa Sushi Opole</h1>
-                            <h2 class="header__subtitle">Jedyny taki Sushi Bar & Japan Restaurant w Opolu!</h2>
+                            <h1 class="header__title"><?php echo $attributes['title']; ?></h1>
+                            <h2 class="header__subtitle"><?php echo $attributes['subtitle']; ?></h2>
                         </div>
                         <div class="header__descriptions">
-                        <p class="header__description">Ciepłe i zimne dania kuchni japońskiej, tradycyjne oraz autorskie sushi, własne zupy, japońskie rosoły miso, długo gotowany, tradycyjny ramen <span>bez glutaminianu sodu</span>.</p>
-                        <p class="header__description">To jedynie tylko krótka charakterystyka tego wyjątkowego, kulinarnego miejsca na mapie Opola.</p>
-                        <a href="/o-nas" class="header__description header__link">Chcesz dowiedzieć się więcej? <span>Przeczytaj o nas!</span></a>
-                        </div>
+                        <?php foreach( $attributes['texts'] as $texts ): ?>
+                        <p class="header__description"><?php echo $texts['text']; ?></p>
+                                    <?php endforeach; ?>
+                        <a href="<?php echo $attributes['link']; ?>" class="header__description header__link"><?php echo $attributes['link-text']; ?></a>
+                    </div>
                     </div>
                     
                     

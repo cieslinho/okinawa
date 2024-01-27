@@ -66,6 +66,12 @@
 			margin-block: 0.5em;
 		}
 
+		a {
+			color: $black;
+			font-weight: 700;
+			text-decoration: underline;
+		}
+
 		p {
 			line-height: 180%;
 		}
@@ -83,7 +89,7 @@
 	}
 
 	&__sidebar {
-		display: none;
+		// display: none;
 		flex-direction: column;
 		gap: 1em;
 

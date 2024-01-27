@@ -23,8 +23,8 @@
                         <p class="suggested__sushi-price">
                         <?php echo $slide['price']; ?>                </p>
                         <div class="suggested__sushi-btns">
-                            <a href="    <?php echo $slide['mobile']; ?>" class="suggested__sushi-btn">telefon</a>
-                            <a href="    <?php echo $slide['link']; ?>"                                class="suggested__sushi-btn">pyszne.pl</a>
+                            <a href="tel:+516997590" class="suggested__sushi-btn">telefon</a>
+                            <a href="https://www.pyszne.pl/menu/okinawa-sushi-bar-japan-restaurant"                                class="suggested__sushi-btn">pyszne.pl</a>
                         </div>
 
                     </div>

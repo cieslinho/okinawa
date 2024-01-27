@@ -2,23 +2,27 @@ const navBtn = document.querySelector('.nav__btn')
 const navMenu = document.querySelector('.nav__list')
 const navOverlay = document.querySelector('.nav__overlay')
 const navBtnText = document.querySelector('.nav__btn-text')
+const navLinks = document.querySelectorAll('.nav__menu-link')
 const menuBtns = document.querySelectorAll('.menu__tab')
 const menuItems = document.querySelectorAll('.menu__item')
 const menuTitles = document.querySelectorAll('.menu__title')
 const menuDescriptions = document.querySelectorAll('.menu__description')
+const menuAccessories = document.querySelector('.menu__accessories')
+const closePopup = document.querySelector('.promo__close')
 
 const toggleNav = () => {
 	const isActive = navMenu.classList.toggle('active')
 	navBtn.classList.toggle('active', isActive)
 	navOverlay.classList.toggle('active', isActive)
 	navBtnText.textContent = isActive ? 'zamknij' : 'menu'
-}
 
-const closeNav = () => {
-	navBtn.classList.remove('active')
-	navOverlay.classList.remove('active')
-	navMenu.classList.remove('active')
-	navBtnText.textContent = 'menu'
+	navLinks.forEach(navLink => {
+		navLink.addEventListener('click', () => {
+			navMenu.classList.remove('active')
+			navOverlay.classList.remove('active')
+			navBtnText.textContent = 'menu'
+		})
+	})
 }
 
 const swiper = new Swiper('.suggested__swiper', {
@@ -105,7 +109,6 @@ const testimonialsSwiper = new Swiper('.testimonials__swiper', {
 	loop: true,
 	centeredSlides: true,
 	roundLengths: true,
-
 	breakpoints: {
 		768: {
 			slidesPerView: 2,
@@ -115,6 +118,17 @@ const testimonialsSwiper = new Swiper('.testimonials__swiper', {
 		968: {
 			slidesPerView: 3,
 			spaceBetween: 60,
+		},
+	},
+	on: {
+		slideChange: function () {
+			var currentSlide = this.realIndex + 1
+			console.log('currentSlide is:' + currentSlide)
+			document.querySelector('.current-slide').innerHTML = currentSlide
+		},
+		beforeInit: function () {
+			let numOfSlides = this.wrapperEl.querySelectorAll('.swiper-slide').length
+			document.querySelector('.total-slides').innerHTML = numOfSlides
 		},
 	},
 })
@@ -150,6 +164,7 @@ menuBtns.forEach(menuBtn => {
 		checkTabs()
 		checkTitles()
 		checkDescriptions()
+		checkAccessories()
 	})
 
 	function checkTabs() {
@@ -187,7 +202,55 @@ menuBtns.forEach(menuBtn => {
 			}
 		})
 	}
+	function checkAccessories() {
+		if (menuBtn.id === menuAccessories.id) {
+			console.log('to samo id - tytuł')
+			menuAccessories.classList.add('active')
+		} else {
+			console.log('rozne id - tytuł')
+			menuAccessories.classList.remove('active')
+		}
+	}
 })
 
+function sets() {
+	menuTitles.forEach(menuTitle => {
+		if (menuTitle.id == 'zestawy') {
+			console.log('to samo id - tytuł')
+			menuTitle.classList.add('active')
+		}
+	})
+	menuDescriptions.forEach(menuDescription => {
+		if (menuDescription.id == 'zestawy') {
+			console.log('to samo id - tytuł')
+			menuDescription.classList.add('active')
+		}
+	})
+	menuItems.forEach(menuItem => {
+		if (menuItem.id == 'zestawy') {
+			console.log('to samo id - tytuł')
+			menuItem.classList.add('active')
+		}
+	})
+}
+
+sets()
+
 navBtn.addEventListener('click', toggleNav)
-navOverlay.addEventListener('click', closeNav)
+// navOverlay.addEventListener('click', closeNav)
+
+window.addEventListener('load', function () {
+	const promoPopup = document.querySelector('.promo')
+	const promoOverlay = document.querySelector('.promo__overlay')
+	setTimeout(function open(event) {
+		promoPopup.classList.add('active')
+		promoOverlay.classList.add('active')
+	}, 1000)
+	closePopup.addEventListener('click', () => {
+		const promoPopup = document.querySelector('.promo')
+		const promoOverlay = document.querySelector('.promo__overlay')
+
+		promoPopup.classList.remove('active')
+		promoOverlay.classList.remove('active')
+	})
+})

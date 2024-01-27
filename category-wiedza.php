@@ -15,7 +15,7 @@ $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $args = array(
     'post_type' => 'post',
     'post_status' => 'publish',
-    'category_name' => 'szkolenia',
+    'category_name' => 'wiedza',
     'posts_per_page' => 5,
     'paged' => get_query_var('paged')
 );

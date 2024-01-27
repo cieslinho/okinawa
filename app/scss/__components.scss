@@ -20,7 +20,7 @@
 	&-left {
 		top: 30%;
 		left: -100px;
-		opacity: 0.08;
+		opacity: 0.1;
 		width: 450px;
 
 		@include respond(mobile-max) {
@@ -30,7 +30,7 @@
 		@include respond(tablet) {
 			top: 35%;
 			left: -50px;
-			opacity: 0.2;
+			opacity: 0.5;
 			width: 750px;
 		}
 	}

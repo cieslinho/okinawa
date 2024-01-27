@@ -20,7 +20,7 @@
 .section-img-left {
   top: 30%;
   left: -100px;
-  opacity: 0.08;
+  opacity: 0.1;
   width: 450px;
 }
 @media only screen and (min-width: 568px) {
@@ -32,7 +32,7 @@
   .section-img-left {
     top: 35%;
     left: -50px;
-    opacity: 0.2;
+    opacity: 0.5;
     width: 750px;
   }
 }
@@ -160,6 +160,7 @@ button {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 50px;
   font-size: 62.5%;
 }
 
@@ -168,7 +169,7 @@ html {
   font-family: nuku1;
 }
 body {
-  background-color: #fff;
+  background: url("../images/waves-9.jpg");
   color: #000;
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
@@ -301,7 +302,7 @@ body {
 }
 .nav__list-logo {
   position: absolute;
-  top: 130px;
+  top: 80px;
   z-index: 50;
 }
 @media only screen and (min-width: 992px) {
@@ -344,7 +345,7 @@ body {
   transform: translate(-50%, -50%);
   opacity: 0.3;
   z-index: -20;
-  background: url("../images/wave-png.png") #fff;
+  background: url("../images/wave-png.webp") #fff;
   background-position: center;
   background-size: 95%;
   background-repeat: no-repeat;
@@ -402,7 +403,7 @@ body {
 .nav__bottom {
   display: flex;
   position: absolute;
-  bottom: 100px;
+  bottom: 60px;
   left: 50%;
   flex-direction: column;
   gap: 1.5em;
@@ -515,6 +516,9 @@ body {
   align-items: flex-start;
   gap: 1em;
 }
+.header__titles {
+  align-items: stretch;
+}
 .header__info {
   gap: 1.5em;
 }
@@ -574,6 +578,9 @@ body {
   font-weight: 700;
   font-size: 1.8rem;
 }
+.header__subtitle span {
+  color: #b8202e;
+}
 @media only screen and (min-width: 768px) {
   .header__subtitle {
     font-size: 2.6rem;
@@ -603,6 +610,7 @@ body {
 }
 .header__link span {
   border-bottom: 2px solid #000;
+  color: #b8202e;
 }
 .header__link:hover span {
   border-bottom: 2px solid #b8202e;
@@ -626,8 +634,8 @@ body {
   align-items: center;
   gap: 1em;
   transform: scale(0.95) !important;
-  transition: background-color 0.3s, transform 0.3s, color 0.3s;
-  background-color: #fff;
+  transition: background-color 0.3s, transform 0.3s, color 0.3s, background-image 0.3s;
+  border-radius: 25px;
   padding: 2em 1em;
   overflow: hidden;
   color: #000;
@@ -690,7 +698,7 @@ body {
   font-size: 2rem;
 }
 .suggested .swiper-slide-active {
-  background-color: #b8202e;
+  background-image: url("../images/stone-plate-2.jpg");
   color: #fff;
 }
 @media only screen and (min-width: 768px) {
@@ -703,8 +711,8 @@ body {
   color: #000;
 }
 .suggested .swiper-slide-active .suggested__sushi-btn:hover {
-  border: 2px solid #000;
-  background-color: #000;
+  border: 2px solid #b8202e;
+  background-color: #b8202e;
   color: #fff;
 }
 .suggested .swiper-pagination {
@@ -867,11 +875,26 @@ body {
     right: 0;
   }
 }
+.testimonials__swiper {
+  padding-top: 1.5em;
+}
 .testimonials__swiper-wrapper {
   padding-bottom: 2em;
 }
 .testimonials__box {
   position: relative;
+}
+.testimonials__box::before {
+  position: absolute;
+  top: -30px;
+  left: -3px;
+  z-index: 30;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 55px;
+  height: 55px;
+  overflow: hidden;
+  content: "";
 }
 .testimonials__box::after {
   position: absolute;
@@ -897,12 +920,13 @@ body {
 }
 .testimonials__icon {
   position: absolute;
-  top: -25px;
-  left: 0;
+  top: -30px;
+  left: -3px;
   align-self: flex-start;
-  z-index: 10;
-  background-color: #fff;
+  z-index: 40;
   padding: 0.3em;
+  overflow: hidden;
+  color: #000;
   font-size: 3.5rem;
 }
 .testimonials__img {
@@ -937,6 +961,21 @@ body {
   .testimonials__author {
     font-size: 2rem;
   }
+}
+.testimonials__total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+.testimonials__total-current, .testimonials__total-all {
+  padding: 0.2em 0.4em;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.testimonials__total-span {
+  color: #b8202e;
+  font-size: 2.5rem;
 }
 .testimonials .swiper-pagination {
   bottom: 10px;
@@ -1430,14 +1469,10 @@ body {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-@media only screen and (min-width: 1440px) {
-  .menu__items {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
 .menu__item {
   display: none;
-  background-color: #000;
+  border-radius: 25px;
+  background-image: url("../images/stone-plate-2.webp");
 }
 .menu__item-content {
   display: flex;
@@ -1460,6 +1495,7 @@ body {
 .menu__item-name {
   color: #fff;
   font-size: 2rem;
+  text-align: center;
 }
 @media only screen and (min-width: 768px) {
   .menu__item-name {
@@ -1494,7 +1530,10 @@ body {
     font-size: 2.4rem;
   }
 }
-.menu__item.active, .menu__title.active, .menu__description.active {
+.menu__accessories {
+  display: none;
+}
+.menu__item.active, .menu__title.active, .menu__description.active, .menu__accessories.active {
   display: block;
 }
 
@@ -2067,6 +2106,11 @@ body {
 .article__content figure {
   margin-block: 0.5em;
 }
+.article__content a {
+  color: #000;
+  font-weight: 700;
+  text-decoration: underline;
+}
 .article__content p {
   line-height: 180%;
 }
@@ -2080,7 +2124,6 @@ body {
   }
 }
 .article__sidebar {
-  display: none;
   flex-direction: column;
   gap: 1em;
 }
@@ -2182,9 +2225,9 @@ body {
 }
 .product__box-thumb {
   opacity: 0.4;
+  transition: opacity 0.3s;
   width: 100%;
   height: 150px;
-  transition: opacity 0.3s;
 }
 .product__img {
   width: 100%;
@@ -2234,8 +2277,11 @@ body {
   border-bottom: 1px solid #e5e5e5;
   padding-bottom: 1em;
 }
-.product__details, .product__options {
+.product__details, .product__options, .product__tabs {
   margin-top: 1em;
+}
+.product__tabs {
+  margin-bottom: 0.5em;
 }
 .product__description {
   margin-top: 0.5em;
@@ -2243,4 +2289,117 @@ body {
 }
 .product__span {
   font-weight: 700;
+}
+.product__tab, .product__btn {
+  transition: background-color 0.2s;
+  background-color: #000;
+  padding: 0.2em 0.4em;
+  color: #fff;
+}
+.product__tab:hover, .product__btn:hover {
+  background-color: #b8202e;
+}
+
+.promo {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 5000;
+  transition: opacity 0.3s ease-in-out;
+  box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 1em;
+  width: 100%;
+  max-width: 90%;
+}
+@media only screen and (min-width: 768px) {
+  .promo {
+    padding: 2em 1em;
+    max-width: 550px;
+  }
+}
+.promo__close {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  z-index: 50;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: #b8202e;
+  padding: 0.5em;
+  color: #fff;
+  font-size: 1.2rem;
+}
+.promo__close:hover {
+  background-color: #000;
+}
+@media only screen and (min-width: 768px) {
+  .promo__close {
+    top: -15px;
+    right: -10px;
+    padding: 0.6em;
+  }
+}
+.promo__close i {
+  font-size: 1.8rem;
+}
+@media only screen and (min-width: 768px) {
+  .promo__close i {
+    font-size: 2.3rem;
+  }
+}
+.promo__texts {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 180%;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .promo__texts {
+    font-size: 1.8rem;
+  }
+}
+.promo__link {
+  transition: background-color 0.2s;
+  margin-top: 0.5em;
+  background-color: #b8202e;
+  padding: 0.3em 0.6em;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+.promo__link:hover {
+  background-color: #000;
+}
+@media only screen and (min-width: 768px) {
+  .promo__link {
+    margin-top: 1em;
+    font-size: 1.8rem;
+  }
+}
+.promo__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2000;
+  transition: opacity 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+}
+.promo__overlay.active, .promo.active {
+  visibility: visible;
+  opacity: 1;
 }

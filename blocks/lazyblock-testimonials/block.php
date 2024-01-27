@@ -1,5 +1,5 @@
 <section class="testimonials section-decoration">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-decoration-castle-2.png"
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/okinawa-sushi-opole-decoration-castle-2.webp"
         alt="" class="section-img section-img-right">
     <div class="container">
         <div class="section-texts">
@@ -25,7 +25,14 @@
 
 
             </div>
-            <div class="testimonials__pagination swiper-pagination"></div>
+            <div class="testimonials__total">
+                <p class="current-slide testimonials__total-current"></p>
+                <span class="testimonials__total-span">/</span>
+                <p class="total-slides testimonials__total-all"></p>
+ 
+
+            </div>
+
         </div>
 
     </div>

@@ -66,11 +66,14 @@
                         <p class="nav__bottom-text">#socialMedia</p>
                     </div>
                     <div class="nav__socials">
-                        <a href="#" class="nav__social">
+                        <a href="https://www.facebook.com/okinawa.opole" class="nav__social">
                             <i class='bx bxl-facebook'></i>
                         </a>
-                        <a href="#" class="nav__social">
+                        <a href="https://www.instagram.com/sushi_okinawa_opole/" class="nav__social">
                             <i class='bx bxl-instagram'></i>
+                        </a>
+                        <a href="https://www.google.com/maps/place/Okinawa+Sushi+Restauracja+Opole/@50.6734327,17.9563459,21z/data=!4m6!3m5!1s0x47105320e72299a9:0xc5404027ecb4d1a6!8m2!3d50.6734936!4d17.9564534!16s%2Fg%2F11q386wb24?entry=tts" class="nav__social">
+                            <i class='bx bxl-google'></i>
                         </a>
                     </div>
                 </div>

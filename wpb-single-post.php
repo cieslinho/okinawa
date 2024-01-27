@@ -1,6 +1,11 @@
 <?php
-get_header();
-?>
+/*
+ * Template Name: Without cover img
+ * Template Post Type: post, page, product
+ */
+   
+ get_header();  ?>
+
 
 
 <section class="article">
@@ -23,7 +28,7 @@ get_header();
                         </p>
 
                     </div>
-                    <img class="article__thumbnail" src="<?php the_post_thumbnail_url(); ?>">
+                    <!-- <img class="article__thumbnail" src="<?php the_post_thumbnail_url(); ?>"> -->
 
                 </div>
 
