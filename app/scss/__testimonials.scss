@@ -136,6 +136,18 @@
 		}
 	}
 
+	&__info {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 1em;
+
+		&-text {
+			font-style: italic;
+			font-size: 1.3rem;
+		}
+	}
+
 	.swiper-pagination {
 		// margin-top: 3em !important;
 		bottom: 10px;

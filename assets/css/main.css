@@ -977,6 +977,16 @@ body {
   color: #b8202e;
   font-size: 2.5rem;
 }
+.testimonials__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+.testimonials__info-text {
+  font-style: italic;
+  font-size: 1.3rem;
+}
 .testimonials .swiper-pagination {
   bottom: 10px;
 }

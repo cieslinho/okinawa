@@ -32,6 +32,9 @@
  
 
             </div>
+            <div class="testimonials__info">
+                <p class="testimonials__info-text">*Źródło Opinii: Google</p>
+            </div>
 
         </div>
 
